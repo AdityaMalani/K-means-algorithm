@@ -83,7 +83,7 @@ public static void runKmeans(){
 
 	int i,j;
 	float min;
-	for (int m=0;m<1;m++)
+	for (int m=0;m<50;m++)
 	{
 		for(i=0;i<n;i++)
 		{
@@ -104,12 +104,51 @@ public static void runKmeans(){
 		getMeans();
 	
 	}
-	for(i=0;i<n;i++)
+	for(i=0;i<k;i++)
 	{
-		System.out.print(cluster[i]);
+		System.out.print("Cluster "+(i+1)+": ");
+		for(j=0;j<n;j++)
+		{
+		
+			if(cluster[j] == i+1){
+			
+				System.out.print(arr[j]+" ");
+			
+			}
+		}
+		System.out.println("");
 	}
+	
 	
 
 }
 
 }
+
+/* Sample Output
+
+1] n=10 k=3:
+Enter no. of elements: 
+10
+Enter elements
+5 4 1 0 3 9 10 7 8 2
+Enter value of K:
+3
+Cluster 1: 10 7 8 
+Cluster 2: 5 4 9 
+Cluster 3: 1 0 3 2 
+
+2] n=10 k=5
+Enter no. of elements: 
+10     
+Enter elements
+5 4 1 0 3 9 10 7 8 2
+Enter value of K:
+5
+Cluster 1: 5 
+Cluster 2: 10 
+Cluster 3: 9 7 8 
+Cluster 4: 1 0 
+Cluster 5: 4 3 2
+
+*/
