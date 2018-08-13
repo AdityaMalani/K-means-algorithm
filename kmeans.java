@@ -62,11 +62,13 @@ public static void getMeans(){
 	int count=0;
 	for (i=0;i<k;i++)
 	{
-	count=0;
+		count=0;
+		k_arr[k1] = 0;
 		for(j=0;j<n;j++)
 		{
 			if (cluster[j] == k1+1)
 			{
+				
 				k_arr[k1] = k_arr[k1] + arr[j];
 				count++;
 			}
@@ -79,11 +81,10 @@ public static void getMeans(){
 
 public static void runKmeans(){
 
-	int i,change=1,j;
+	int i,j;
 	float min;
-	for (int m=0;m<10;m++)
+	for (int m=0;m<1;m++)
 	{
-		change=0;
 		for(i=0;i<n;i++)
 		{
 		
@@ -92,9 +93,10 @@ public static void runKmeans(){
 				min = Math.abs(arr[i] - k_arr[j]);
 				if (min < dist[i])
 				{
-					//System.out.print("Hitting if");
+					
+					//System.out.print("Hitting if "+min+" "+dist[i]);
 					cluster[i] = j+1;
-					change=1;
+
 				}
 			}
 		
