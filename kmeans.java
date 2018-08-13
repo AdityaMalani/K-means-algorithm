@@ -83,7 +83,7 @@ public static void runKmeans(){
 
 	int i,j;
 	float min;
-	for (int m=0;m<50;m++)
+	for (int m=0;m<10;m++)
 	{
 		for(i=0;i<n;i++)
 		{
@@ -94,8 +94,9 @@ public static void runKmeans(){
 				if (min < dist[i])
 				{
 					
-					//System.out.print("Hitting if "+min+" "+dist[i]);
+					//System.out.println("Hitting if "+min+" "+dist[i]+" "+arr[i]+" "+k_arr[j]);
 					cluster[i] = j+1;
+					dist[i] = min;
 
 				}
 			}
@@ -130,25 +131,28 @@ public static void runKmeans(){
 1] n=10 k=3:
 Enter no. of elements: 
 10
+Enter no. of elements: 
+10
 Enter elements
 5 4 1 0 3 9 10 7 8 2
 Enter value of K:
 3
-Cluster 1: 10 7 8 
-Cluster 2: 5 4 9 
+Cluster 1: 9 10 7 8 
+Cluster 2: 5 4 
 Cluster 3: 1 0 3 2 
+
 
 2] n=10 k=5
 Enter no. of elements: 
-10     
+10
 Enter elements
 5 4 1 0 3 9 10 7 8 2
 Enter value of K:
 5
 Cluster 1: 5 
-Cluster 2: 10 
-Cluster 3: 9 7 8 
-Cluster 4: 1 0 
-Cluster 5: 4 3 2
+Cluster 2: 9 10 8 
+Cluster 3: 7 
+Cluster 4: 1 0 2 
+Cluster 5: 4 3 
 
 */
